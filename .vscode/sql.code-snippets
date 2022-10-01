@@ -1,0 +1,55 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+    "Header": {
+		"scope": "sql",
+        "prefix": "head",
+        "body": [
+          "-----------------------------------------------------------------",
+		  "-- $1",
+		  "--",
+		  "-- rudi@babaluga.com, go ahead license",
+		  "-----------------------------------------------------------------",
+		  "",
+		  "",
+		  "$2"
+        ],
+        "description": "Header for SQL file"
+    },
+
+	"OptionRecompile": {
+		"scope": "sql",
+		"prefix": "option_recompile",
+        "body": [
+          "OPTION (RECOMPILE, MAXDOP 1);"
+        ],
+        "description": "tail for all DMV queries"
+	},
+
+	"StartStopXEvent": {
+		"scope": "sql",
+		"prefix": "start and stop xevent",
+        "body": [
+          "-- start the session",
+		  "ALTER EVENT SESSION [$1] ON SERVER STATE=START;",
+		  "-- stop the sesison",
+		  "ALTER EVENT SESSION [$1] ON SERVER STATE=STOP;"
+        ],
+        "description": "boilerplate for xevent"
+	}	
+}
